@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MessagesSquare, Heart, Terminal, Cpu } from 'lucide-react';
 
 function App() {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,12 +63,26 @@ function App() {
           Open-source tools & utilities
         </p>
         <div className="flex gap-4 justify-center">
-          <a href="#projects" className="px-6 py-2.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 font-semibold hover:bg-red-500/20 transition-colors">
+          <button 
+            onClick={() => setActiveCategory(activeCategory === 'Utilities' ? null : 'Utilities')}
+            className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 border ${
+              activeCategory === 'Utilities' 
+                ? 'bg-red-500 text-white border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.5)] scale-105' 
+                : 'bg-red-500/10 text-red-400 border-red-500/20 hover:bg-red-500/20 hover:scale-105'
+            }`}
+          >
             Utilities
-          </a>
-          <a href="#projects" className="px-6 py-2.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold hover:bg-emerald-500/20 transition-colors">
+          </button>
+          <button 
+            onClick={() => setActiveCategory(activeCategory === 'Launchers' ? null : 'Launchers')}
+            className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 border ${
+              activeCategory === 'Launchers' 
+                ? 'bg-emerald-500 text-white border-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.5)] scale-105' 
+                : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20 hover:bg-emerald-500/20 hover:scale-105'
+            }`}
+          >
             Launchers
-          </a>
+          </button>
         </div>
       </motion.section>
 
@@ -86,7 +102,16 @@ function App() {
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
           
           {/* Win11Optimization */}
-          <motion.article variants={itemVariants} className="bg-[#111113] border border-zinc-800 rounded-2xl p-8 glow-on-hover flex flex-col h-full">
+          <motion.article 
+            variants={itemVariants} 
+            className={`bg-[#111113] border border-zinc-800 rounded-2xl p-8 flex flex-col h-full transition-all duration-500 ${
+              activeCategory === 'Utilities' 
+                ? 'ring-2 ring-red-500 shadow-[0_0_40px_rgba(239,68,68,0.2)] scale-[1.02]' 
+                : activeCategory !== null 
+                  ? 'opacity-30 grayscale blur-[2px] scale-[0.98]' 
+                  : 'glow-on-hover'
+            }`}
+          >
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-3">Win11Optimization</h3>
@@ -134,7 +159,16 @@ function App() {
           </motion.article>
 
           {/* CubeLauncher */}
-          <motion.article variants={itemVariants} className="bg-[#111113] border border-zinc-800 rounded-2xl p-8 glow-on-hover flex flex-col h-full relative overflow-hidden">
+          <motion.article 
+            variants={itemVariants} 
+            className={`bg-[#111113] border border-zinc-800 rounded-2xl p-8 flex flex-col h-full relative overflow-hidden transition-all duration-500 ${
+              activeCategory === 'Launchers' 
+                ? 'ring-2 ring-emerald-500 shadow-[0_0_40px_rgba(16,185,129,0.2)] scale-[1.02]' 
+                : activeCategory !== null 
+                  ? 'opacity-30 grayscale blur-[2px] scale-[0.98]' 
+                  : 'glow-on-hover'
+            }`}
+          >
             {/* Subtle blue accent for CubeLauncher */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[50px] rounded-full pointer-events-none" />
             
