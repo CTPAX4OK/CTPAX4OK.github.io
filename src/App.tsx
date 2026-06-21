@@ -99,14 +99,24 @@ function App() {
               <div><span className="text-green-500">$</span> dotnet build</div>
             </div>
 
-            <a 
-              href="https://github.com/CTPAX4OK/Win11Optimization" 
-              target="_blank" 
-              rel="noreferrer"
-              className="mt-auto block w-full py-3 px-4 bg-zinc-100 hover:bg-white text-zinc-900 font-semibold rounded-xl text-center transition-colors"
-            >
-              View on GitHub
-            </a>
+            <div className="mt-auto grid grid-cols-2 gap-3 relative z-10">
+              <a 
+                href="https://cybernetpro.online/Win11Optimization/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="block w-full py-3 px-4 bg-zinc-100 hover:bg-white text-zinc-900 font-semibold rounded-xl text-center transition-colors"
+              >
+                Visit Website
+              </a>
+              <a 
+                href="https://github.com/CTPAX4OK/Win11Optimization" 
+                target="_blank" 
+                rel="noreferrer"
+                className="block w-full py-3 px-4 bg-zinc-900 border border-zinc-700 hover:bg-zinc-800 text-white font-semibold rounded-xl text-center transition-colors"
+              >
+                GitHub Repo
+              </a>
+            </div>
           </motion.article>
 
           {/* CubeLauncher */}
