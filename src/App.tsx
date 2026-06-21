@@ -104,7 +104,7 @@ function App() {
                 href="https://cybernetpro.online/Win11Optimization/" 
                 target="_blank" 
                 rel="noreferrer"
-                className="block w-full py-3 px-4 bg-zinc-100 hover:bg-white text-zinc-900 font-semibold rounded-xl text-center transition-colors"
+                className="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition-colors glow-blue-on-hover"
               >
                 Visit Website
               </a>
