@@ -57,124 +57,133 @@ function App() {
         <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 text-white">
           CTPAX4OK
         </h1>
-        <p className="text-xl text-zinc-400 font-medium tracking-wide">
+        <p className="text-xl text-zinc-400 font-medium tracking-wide mb-10">
           Open-source tools & utilities
         </p>
+        <div className="flex gap-4 justify-center">
+          <a href="#projects" className="px-6 py-2.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 font-semibold hover:bg-red-500/20 transition-colors">
+            Utilities
+          </a>
+          <a href="#projects" className="px-6 py-2.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold hover:bg-emerald-500/20 transition-colors">
+            Launchers
+          </a>
+        </div>
       </motion.section>
 
       {/* Projects */}
       <motion.section 
+        id="projects"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="container mx-auto px-6 pb-32 relative z-10 max-w-5xl"
+        className="container mx-auto px-6 pb-32 relative z-10"
       >
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Utilities Column */}
-          <div>
-            <motion.h2 variants={itemVariants} className="text-sm font-semibold tracking-widest text-zinc-500 uppercase mb-6 ml-2">
-              Utilities
-            </motion.h2>
-            <div className="flex flex-col gap-8">
-              {/* Win11Optimization */}
-              <motion.article variants={itemVariants} className="bg-[#111113] border border-zinc-800 rounded-2xl p-8 glow-on-hover flex flex-col h-full">
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Win11Optimization</h3>
-                    <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 text-xs font-semibold uppercase tracking-wider text-zinc-400 rounded-full">
-                      C# / .NET 8
-                    </span>
-                  </div>
-                  <Cpu className="text-zinc-500" size={28} />
-                </div>
-                
-                <p className="text-zinc-400 leading-relaxed mb-8 flex-grow">
-                  Модульная и безопасная утилита для тонкой настройки и оптимизации Windows 11 с возможностью полного отката изменений.
-                </p>
+        <motion.h2 variants={itemVariants} className="text-sm font-semibold tracking-widest text-zinc-500 uppercase mb-8 ml-2">
+          Projects
+        </motion.h2>
 
-                <div className="bg-black/50 p-4 rounded-xl border border-zinc-800 font-mono text-sm mb-8 text-zinc-500">
-                  <div className="text-zinc-600 mb-2"># clone & build</div>
-                  <div><span className="text-green-500">$</span> git clone https://github.com/CTPAX4OK/Win11Optimization.git</div>
-                  <div><span className="text-green-500">$</span> cd Win11Optimization</div>
-                  <div><span className="text-green-500">$</span> dotnet build</div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
+          
+          {/* Win11Optimization */}
+          <motion.article variants={itemVariants} className="bg-[#111113] border border-zinc-800 rounded-2xl p-8 glow-on-hover flex flex-col h-full">
+            <div className="flex justify-between items-start mb-6">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-3">Win11Optimization</h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-red-500/10 border border-red-500/20 text-xs font-semibold uppercase tracking-wider text-red-400 rounded-full">
+                    Utilities
+                  </span>
+                  <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 text-xs font-semibold uppercase tracking-wider text-zinc-400 rounded-full">
+                    C# / .NET 8
+                  </span>
                 </div>
-
-                <div className="mt-auto grid grid-cols-2 gap-3 relative z-10">
-                  <a 
-                    href="https://cybernetpro.online/Win11Optimization/" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition-colors glow-blue-on-hover"
-                  >
-                    Visit Website
-                  </a>
-                  <a 
-                    href="https://github.com/CTPAX4OK/Win11Optimization" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="block w-full py-3 px-4 bg-zinc-900 border border-zinc-700 hover:bg-zinc-800 text-white font-semibold rounded-xl text-center transition-colors"
-                  >
-                    GitHub Repo
-                  </a>
-                </div>
-              </motion.article>
+              </div>
+              <Cpu className="text-zinc-500" size={28} />
             </div>
-          </div>
+            
+            <p className="text-zinc-400 leading-relaxed mb-8 flex-grow">
+              Модульная и безопасная утилита для тонкой настройки и оптимизации Windows 11 с возможностью полного отката изменений.
+            </p>
 
-          {/* Launchers Column */}
-          <div>
-            <motion.h2 variants={itemVariants} className="text-sm font-semibold tracking-widest text-zinc-500 uppercase mb-6 ml-2">
-              Launchers
-            </motion.h2>
-            <div className="flex flex-col gap-8">
-              {/* CubeLauncher */}
-              <motion.article variants={itemVariants} className="bg-[#111113] border border-zinc-800 rounded-2xl p-8 glow-on-hover flex flex-col h-full relative overflow-hidden">
-                {/* Subtle blue accent for CubeLauncher */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[50px] rounded-full pointer-events-none" />
-                
-                <div className="flex justify-between items-start mb-6 relative z-10">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-3">CubeLauncher</h3>
-                    <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 text-xs font-semibold uppercase tracking-wider text-blue-400/80 rounded-full">
-                      TypeScript / React
-                    </span>
-                  </div>
-                  <Terminal className="text-zinc-500" size={28} />
-                </div>
-                
-                <p className="text-zinc-400 leading-relaxed mb-8 flex-grow relative z-10">
-                  Modern Minecraft launcher built with Next.js and Electron, designed to bridge complex console tools and a user-friendly UI.
-                </p>
-
-                <div className="bg-black/50 p-4 rounded-xl border border-zinc-800 font-mono text-sm mb-8 text-zinc-500 relative z-10">
-                  <div className="text-zinc-600 mb-2"># install & run</div>
-                  <div><span className="text-green-500">$</span> git clone https://github.com/CTPAX4OK/CubeLauncher.git</div>
-                  <div><span className="text-green-500">$</span> cd CubeLauncher</div>
-                  <div><span className="text-green-500">$</span> npm install && npm run dev</div>
-                </div>
-
-                <div className="mt-auto grid grid-cols-2 gap-3 relative z-10">
-                  <a 
-                    href="https://cybernetpro.online/CubeLauncher/" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition-colors glow-blue-on-hover"
-                  >
-                    Visit Website
-                  </a>
-                  <a 
-                    href="https://github.com/CTPAX4OK/CubeLauncher" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="block w-full py-3 px-4 bg-zinc-900 border border-zinc-700 hover:bg-zinc-800 text-white font-semibold rounded-xl text-center transition-colors"
-                  >
-                    GitHub Repo
-                  </a>
-                </div>
-              </motion.article>
+            <div className="bg-black/50 p-4 rounded-xl border border-zinc-800 font-mono text-sm mb-8 text-zinc-500">
+              <div className="text-zinc-600 mb-2"># clone & build</div>
+              <div><span className="text-green-500">$</span> git clone https://github.com/CTPAX4OK/Win11Optimization.git</div>
+              <div><span className="text-green-500">$</span> cd Win11Optimization</div>
+              <div><span className="text-green-500">$</span> dotnet build</div>
             </div>
-          </div>
+
+            <div className="mt-auto grid grid-cols-2 gap-3 relative z-10">
+              <a 
+                href="https://cybernetpro.online/Win11Optimization/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition-colors glow-blue-on-hover"
+              >
+                Visit Website
+              </a>
+              <a 
+                href="https://github.com/CTPAX4OK/Win11Optimization" 
+                target="_blank" 
+                rel="noreferrer"
+                className="block w-full py-3 px-4 bg-zinc-900 border border-zinc-700 hover:bg-zinc-800 text-white font-semibold rounded-xl text-center transition-colors"
+              >
+                GitHub Repo
+              </a>
+            </div>
+          </motion.article>
+
+          {/* CubeLauncher */}
+          <motion.article variants={itemVariants} className="bg-[#111113] border border-zinc-800 rounded-2xl p-8 glow-on-hover flex flex-col h-full relative overflow-hidden">
+            {/* Subtle blue accent for CubeLauncher */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[50px] rounded-full pointer-events-none" />
+            
+            <div className="flex justify-between items-start mb-6 relative z-10">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-3">CubeLauncher</h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold uppercase tracking-wider text-emerald-400 rounded-full">
+                    Launchers
+                  </span>
+                  <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 text-xs font-semibold uppercase tracking-wider text-blue-400/80 rounded-full">
+                    TypeScript / React
+                  </span>
+                </div>
+              </div>
+              <Terminal className="text-zinc-500" size={28} />
+            </div>
+            
+            <p className="text-zinc-400 leading-relaxed mb-8 flex-grow relative z-10">
+              Modern Minecraft launcher built with Next.js and Electron, designed to bridge complex console tools and a user-friendly UI.
+            </p>
+
+            <div className="bg-black/50 p-4 rounded-xl border border-zinc-800 font-mono text-sm mb-8 text-zinc-500 relative z-10">
+              <div className="text-zinc-600 mb-2"># install & run</div>
+              <div><span className="text-green-500">$</span> git clone https://github.com/CTPAX4OK/CubeLauncher.git</div>
+              <div><span className="text-green-500">$</span> cd CubeLauncher</div>
+              <div><span className="text-green-500">$</span> npm install && npm run dev</div>
+            </div>
+
+            <div className="mt-auto grid grid-cols-2 gap-3 relative z-10">
+              <a 
+                href="https://cybernetpro.online/CubeLauncher/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition-colors glow-blue-on-hover"
+              >
+                Visit Website
+              </a>
+              <a 
+                href="https://github.com/CTPAX4OK/CubeLauncher" 
+                target="_blank" 
+                rel="noreferrer"
+                className="block w-full py-3 px-4 bg-zinc-900 border border-zinc-700 hover:bg-zinc-800 text-white font-semibold rounded-xl text-center transition-colors"
+              >
+                GitHub Repo
+              </a>
+            </div>
+          </motion.article>
+
         </div>
       </motion.section>
 
